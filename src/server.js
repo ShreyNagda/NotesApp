@@ -14,7 +14,10 @@ mongoose
   )
   .then(function () {
     app.get("/", function (req, res) {
-      res.send("This is Home Page");
+      res.json({
+        statusCode: res.statusCode,
+        message: "API works!",
+      });
     });
 
     const noteRouter = require("./routes/note");
